@@ -19,3 +19,16 @@ Preprints are grouped by method. Each method folder holds one dimension folder p
 | 29 | 209497 (Takhanov-Yun) | 210473 | Leech lift | [d29](preprints/leech-lift-d28-d31/d29) |
 | 30 | 220440 (Ma et al.) | 222072 | Leech lift | [d30](preprints/leech-lift-d28-d31/d30) |
 | 31 | 238354 (Takhanov-Yun) | 241077 | Leech lift | [d31](preprints/leech-lift-d28-d31/d31) |
+
+## References
+
+- Boon Suan Ho, [A new lower bound for the kissing number in 19 dimensions](https://arxiv.org/abs/2603.10425).
+- Henry Cohn and Anqi Li, [Improved kissing numbers in seventeen through twenty-one dimensions](https://arxiv.org/abs/2411.04916).
+- Rustem Takhanov and Stanislav Yun, [New lower bounds for kissing numbers in dimensions 25–31](https://arxiv.org/abs/2609.21591).
+- Chengdong Ma et al., [Finding Kissing Numbers with Game-theoretic Reinforcement Learning](https://arxiv.org/abs/2511.13391).
+
+## Other GitHub Repositories
+
+- [alexlegeartis/KissingNumbers](https://github.com/alexlegeartis/KissingNumbers)
+- [k-nic/kissing_d25-31](https://github.com/k-nic/kissing_d25-31)
+- [griffinwork40/D21-Kissing](https://github.com/griffinwork40/D21-Kissing)
