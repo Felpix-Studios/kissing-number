@@ -1,0 +1,51 @@
+# macOS metadata
+.DS_Store
+._*
+.Spotlight-V100/
+.Trashes/
+
+# Local editor settings and temporary files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# C++ build products
+/checker/check_kissing
+/checker/check_kissing.exe
+/check_kissing
+/check_kissing.exe
+a.out
+*.o
+*.obj
+*.dSYM/
+/build/
+/checker/build/
+
+# LaTeX intermediates; keep the published PDFs and source files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.bcf
+*.blg
+*.run.xml
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local environment variables
+.env
+.env.*
+!.env.example
