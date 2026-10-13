@@ -102,7 +102,10 @@ static Quad mul(const Quad& x, const Quad& y) {
             x.a * y.d + x.d * y.a + x.b * y.c + x.c * y.b};
 }
 
+// A rational element (b = c = d = 0) has the sign of a for any 128-bit a, so
+// only elements with an irrational part need the 2^61 bound.
 static bool in_range(const Quad& x) {
+    if (x.b == 0 && x.c == 0 && x.d == 0) return true;
     auto ok = [](i128 t) { return t < COEF_LIMIT && t > -COEF_LIMIT; };
     return ok(x.a) && ok(x.b) && ok(x.c) && ok(x.d);
 }
@@ -510,7 +513,7 @@ static Report check_leech(std::ifstream& in, int nthreads) {
         if (!in_range(diff)) { t.add(OUT_OF_RANGE, i, j); return; }
         if (sign(diff) <= 0) return;
         const Quad eq{ss.a - nn.a, ss.b - nn.b, ss.c - nn.c, ss.d - nn.d};
-        t.add(sign(eq) == 0 ? SAME_DIRECTION : VIOLATION, i, j);
+        t.add(in_range(eq) && sign(eq) == 0 ? SAME_DIRECTION : VIOLATION, i, j);
     });
     i64 nint = 0;
     for (auto v : is_int) nint += v;

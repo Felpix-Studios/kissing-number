@@ -23,7 +23,8 @@ a.out
 /build/
 /checker/build/
 
-# LaTeX intermediates; keep the published PDFs and source files
+# LaTeX sources and intermediates; keep the published PDFs
+*.tex
 *.aux
 *.log
 *.out

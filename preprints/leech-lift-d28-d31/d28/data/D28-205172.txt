@@ -1,10 +1,10 @@
-# A kissing configuration of 205172 points in R^28 (tau_28 >= 205172).
-# Construction: Leech lift with 8 disjoint head sets of 528 Leech minimal vectors (512 shape-3
-# vectors on an octad plus 16 shape-4 vectors on an S-bipartite matching, S = {0,1,10,19}), each
-# lifted with a triangle of D4 tails in R^4; 4 poles; 160 extra points: 128 norm-8 layer rows on S
-# and 32 rows on the tetrads {0,1,6,18} and {0,3,7,19} that replace the deleted poles +-p1, +-p2.
+# A kissing configuration of 205172 points in R^28 (tau_28 >= 205172), Theorem 7.2 of the paper.
+# Construction: Leech lift with 8 disjoint head sets of 528 Leech minimal vectors (512 vectors of
+# shape (-3,1^23) with entry +-3 outside an octad O, plus 16 vectors (+-4,+-4,0^22) on an
+# S-bipartite matching of O, S = {0,1,10,19}), each lifted with a triangle of D4 tails in R^4;
+# 4 poles; 160 extra points: 128 layer rows (heads of squared norm 64) on S and 32 rows on the
+# tetrads {0,1,6,18} and {0,3,7,19} that take the place of poles at +-p1, +-p2.
 # Count: 192336 + 8*3*528 + 4 + 160 = 205172.
-# Source dump: work/d25-d32/2026-10-08-oh-stack/dumps/n28_205172.txt (results/d28-lower-improvement-5).
 #
 # Format. Lines starting with # are comments. A number in Q(sqrt2,sqrt3) is written as
 # a sum of terms "m", "m*sqrt(2)", "m*sqrt(3)", "m*sqrt(6)" (m an integer; "sqrt(r)" means
