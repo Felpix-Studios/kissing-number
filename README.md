@@ -6,7 +6,7 @@ Preprints and improved kissing number constructions.
 
 Preprints are grouped by method. Each method folder holds a `paper.pdf` and one dimension folder per result. Each dimension folder has a `data/` folder with the points. The [`checker/`](checker) folder has one C++ program that verifies any of the data files exactly, pair by pair.
 
-- [`preprints/hyperplane-section-d18`](preprints/hyperplane-section-d18): cut a 19-dimensional odd-sign configuration by the hyperplane x2 + x11 + x14 = 0 and add 960 projected points. This ties the 8358 points of Kravatskiy's repository. The paper also gives several other 8358-point choices, three of them with data files.
+- [`preprints/hyperplane-section-d18`](preprints/hyperplane-section-d18): cut a 19-dimensional odd-sign configuration by the hyperplane $x_2 + x_{11} + x_{14} = 0$ and add 960 projected points. This ties the 8358 points of Kravatskiy's repository. The paper also gives several other 8358-point choices, three of them with data files.
 - [`preprints/odd-sign-d19-d21`](preprints/odd-sign-d19-d21): start from the Cohn-Li odd-sign configurations. In d19, delete a small block of points and add more new points than were deleted. In d21, keep every base point and add 3840 sign vectors of punctured Golay code words, weighted 2 on one line of the projective plane of order 4 and 3 elsewhere.
 - [`preprints/leech-lift-d28-d31`](preprints/leech-lift-d28-d31): lift disjoint sets of 528 Leech minimal vectors with short tails in the extra coordinates, then add layer and hole points. In d29-d31 the poles are replaced by more free points with integer coordinates, checked exactly.
 
