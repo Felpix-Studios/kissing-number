@@ -1,7 +1,7 @@
-# A kissing configuration of 210495 points in R^29 (tau_29 >= 210495), Theorem 8.1 of the paper.
+# A kissing configuration of 210495 points in R^29 (tau_29 >= 210495), the dimension-29 theorem of the paper.
 # Frame: 14 disjoint 528-point Leech head sets lifted with 12 tail triangles and 2 tail pairs of
 # D5 roots in R^5: 189168 body rows, 21120 lifts and 144 layer rows (heads of squared norm 64).
-# No poles. Free points: 63 integer rows, about 20 near hole points (heads near Leech vectors of
+# No poles. Computed points: 63 integer rows, about 20 near hole points (heads near Leech vectors of
 # squared norm 48, D5 spinor tails) and the others in the pole region, found by relaxation,
 # insertion at the deepest hole and rounding to integers.
 # Count: 189168 + 21120 + 144 + 63 = 210495.

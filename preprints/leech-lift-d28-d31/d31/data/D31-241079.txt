@@ -1,7 +1,7 @@
-# A kissing configuration of 241079 points in R^31 (tau_31 >= 241079), Theorem 10.1 of the paper.
+# A kissing configuration of 241079 points in R^31 (tau_31 >= 241079), the dimension-31 theorem of the paper.
 # Frame: 42 disjoint head sets of 528 Leech minimal vectors, each lifted with a triangle of E7
 # root tails in R^7: 174384 body rows and 66528 lifts. No poles.
-# Free points: 167 integer rows, found by relaxation, insertion at the deepest hole and rounding.
+# Computed points: 167 integer rows, found by relaxation, insertion at the deepest hole and rounding.
 # Count: 174384 + 66528 + 167 = 241079.
 #
 # Format. Lines starting with # are comments. A number in Q(sqrt2,sqrt3) is written as

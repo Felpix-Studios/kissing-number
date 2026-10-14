@@ -1,4 +1,4 @@
-# A kissing configuration of 205172 points in R^28 (tau_28 >= 205172), Theorem 7.2 of the paper.
+# A kissing configuration of 205172 points in R^28 (tau_28 >= 205172), the dimension-28 theorem of the paper.
 # Construction: Leech lift with 8 disjoint head sets of 528 Leech minimal vectors (512 vectors of
 # shape (-3,1^23) with entry +-3 outside an octad O, plus 16 vectors (+-4,+-4,0^22) on an
 # S-bipartite matching of O, S = {0,1,10,19}), each lifted with a triangle of D4 tails in R^4;

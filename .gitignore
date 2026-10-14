@@ -50,3 +50,6 @@ venv/
 .env
 .env.*
 !.env.example
+
+# ArXiV Submission
+/arxiv

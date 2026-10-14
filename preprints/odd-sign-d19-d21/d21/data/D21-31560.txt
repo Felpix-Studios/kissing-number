@@ -6,7 +6,7 @@
 # Lines starting with # are comments. Coordinates 1 to 21 are those of the D19/D21 paper.
 # 27720 base points (squared norm 8): the 840 roots and the odd-sign octad vectors on the 210 octads.
 # 3840 new points (squared norm 164): entries +-2 on one line of the punctured Golay code and +-3
-# elsewhere, signs given by a codeword w with H(w) != 0 (Proposition 4.4 of the paper).
+# elsewhere, signs given by a codeword w with eta(w) != 0 (the dimension-21 proposition of the paper).
 8 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 8 2 -2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 8 -2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0

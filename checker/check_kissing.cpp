@@ -6,8 +6,10 @@
 // Two input formats, detected from the file:
 //   integer:  lines "q x_1 ... x_n" (point x/sqrt(q), q = x.x), header comment
 //             "... in dimension N: M points".
-//   leech:    "dimension N", "points M", then tail/class/pole/extra lines with
+//   radical:  "dimension N", "points M", then tail/class/pole/extra lines with
 //             coordinates in Z[sqrt2, sqrt3] (see the data file headers).
+//             Tail, class and pole lines need N >= 25; a file with only extra
+//             lines may have any dimension N <= 64.
 //
 // For every pair of points x != y it decides x.y <= |x||y|/2 exactly:
 // either x.y <= 0, or 4(x.y)^2 - |x|^2|y|^2 <= 0. All decisions use integer
@@ -331,7 +333,7 @@ static Report check_integer(std::ifstream& in, int nthreads) {
 }
 
 // ---------------------------------------------------------------------------
-// Leech format: coordinates in Z[sqrt2, sqrt3].
+// Radical format: coordinates in Z[sqrt2, sqrt3].
 // A point is stored as 4 integer blocks of length P (P = n rounded up to 8):
 // block 0 = rational parts, 1 = sqrt2 parts, 2 = sqrt3 parts, 3 = sqrt6 parts.
 
@@ -344,7 +346,7 @@ static Report check_leech(std::ifstream& in, int nthreads) {
     std::string line;
     i64 lineno = 0, pending_heads = 0;
     std::vector<int> cls_tails;
-    auto need_dim = [&]() { if (dim < 25 || dim > 64) die("missing or bad 'dimension' line"); };
+    auto need_dim = [&](i64 lo) { if (dim < lo || dim > 64) die("missing or bad 'dimension' line"); };
     auto parse_vec = [&](const std::string& body, i64 len) {
         const auto f = split(body, ',');
         if ((i64)f.size() != len) die("expected " + std::to_string(len) + " entries at line " + std::to_string(lineno));
@@ -392,7 +394,7 @@ static Report check_leech(std::ifstream& in, int nthreads) {
         } else if (key == "points") {
             npts = std::atoll(rest.c_str());
         } else if (key == "tail") {
-            need_dim();
+            need_dim(25);
             const auto f = split(rest, ' ');
             if (f.size() != 3) die("bad tail line " + std::to_string(lineno));
             if (std::atoll(f[0].c_str()) != (i64)tails.size()) die("tail ids out of order at line " + std::to_string(lineno));
@@ -400,7 +402,7 @@ static Report check_leech(std::ifstream& in, int nthreads) {
             if (d < 1 || d > SMALL_COEF) die("bad tail scale at line " + std::to_string(lineno));
             tails.push_back({d, parse_vec(f[2], dim - 24)});
         } else if (key == "class") {
-            need_dim();
+            need_dim(25);
             const auto f = split(rest, ' ');
             if (f.size() != 2) die("bad class line " + std::to_string(lineno));
             cls_tails.clear();
@@ -412,20 +414,20 @@ static Report check_leech(std::ifstream& in, int nthreads) {
             pending_heads = std::atoll(f[1].c_str());
             if (pending_heads < 1) die("bad class size at line " + std::to_string(lineno));
         } else if (key == "pole") {
-            need_dim();
+            need_dim(25);
             std::vector<i64> v(4 * dim, 0);
             const auto P = parse_vec(rest, dim - 24);
             std::copy(P.begin(), P.end(), v.begin() + 4 * 24);
             pts.push_back(std::move(v));
         } else if (key == "extra") {
-            need_dim();
+            need_dim(1);
             pts.push_back(parse_vec(rest, dim));
         } else {
             die("unknown line type '" + key + "' at line " + std::to_string(lineno));
         }
     }
     if (pending_heads > 0) die("file ends inside a class");
-    need_dim();
+    need_dim(1);
     if (header_n >= 0 && header_n != dim) die("header dimension disagrees with 'dimension' line");
     if (header_m >= 0 && header_m != npts) die("header count disagrees with 'points' line");
     rep.dim = (int)dim;
@@ -577,7 +579,7 @@ int main(int argc, char** argv) {
     const i64 expected_pairs = r.count * (r.count - 1) / 2;
     const bool pass = r.t.pairs == expected_pairs && r.t.violations == 0 && r.t.out_of_range == 0;
     std::printf("file: %s\n", path);
-    std::printf("format: %s\n", leech ? "Z[sqrt2,sqrt3] (leech)" : "integer");
+    std::printf("format: %s\n", leech ? "Z[sqrt2,sqrt3]" : "integer");
     if (!r.notes.empty()) std::printf("%s\n", r.notes.c_str());
     std::printf("dimension: %d\n", r.dim);
     std::printf("points: %lld\n", (long long)r.count);

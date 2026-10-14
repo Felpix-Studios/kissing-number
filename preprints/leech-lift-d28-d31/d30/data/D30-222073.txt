@@ -1,7 +1,7 @@
-# A kissing configuration of 222073 points in R^30 (tau_30 >= 222073), Theorem 9.1 of the paper.
+# A kissing configuration of 222073 points in R^30 (tau_30 >= 222073), the dimension-30 theorem of the paper.
 # Frame: 24 disjoint head sets of 528 Leech minimal vectors, each lifted with a triangle of E6
 # root tails in R^6: 183888 body rows, 38016 lifts and 72 hole rows. No poles.
-# Free points: 97 integer rows, found by relaxation, insertion at the deepest hole and rounding.
+# Computed points: 97 integer rows, found by relaxation, insertion at the deepest hole and rounding.
 # Count: 183888 + 38016 + 72 + 97 = 222073.
 #
 # Format. Lines starting with # are comments. A number in Q(sqrt2,sqrt3) is written as
